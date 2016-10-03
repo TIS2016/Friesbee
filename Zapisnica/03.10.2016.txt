@@ -1,0 +1,37 @@
+Zápisnica č. 2 
+
+Dátum stretnutia : 03. 10. 2016 
+
+Zoznam prítomných : 
+Filip Špadloň
+Michaela Vavrová 
+Gabiel Halasi 
+Matej Randík 
+
+Body: 
+
+
+1. Prediskutovali sme starú verziu projektu, 
+2. Musíme doplniť(prerobiť) stránku:  a. dátumový filter  -  jednoduchšie vyhľadávanie konkrétnych dní za posledný rok do dnes;
+                                      b. naposledny pridané turnaje - ako facebook ma newsfeed, aby bolo možné vidieť postupne turnaje, 
+                                          od najnovších po staršie;
+                                      c. štatistiky hráčov - usporiadanie podľa počtu turnajov, aby sa dali hráči sortovať, 
+                                          filtrovať(chcem napr. filtrovať hráčov podľa zadaného štátu); aby mal každý hráč svoju vizitku, 
+                                          informácie o počte turnajov;
+                                      d. rôzne druhy turnajov (jednodňové, viacdňové)
+                                      e. pridať a upraviť grafy, plocha hovorí o tom koľko bolo turnajov, 
+                                      f. pre každý turnaj je nejaká štatistika, alebo výber len niektorých hráčov ktorých si vyberiem a chcem porovnať
+                                      g. zlepšenie prístupu k aplikácii na stránke
+                                      h. rozpoznanie prihláseného používateľa, user má svoje funkcie, admin klubu má iné obšírne právomoci(môže pridať hráča do klubu),
+                                         superadmin má všetky funkcie
+                                      i. unique e-mail , dvaja hráči nemôžu mať rovnaký mail
+                                      j. vytovrenie pre každého user-a heslo rozpošle sa a on si ho pri najbližšom prihlásení môže zmeniť 
+                                      k. vyriešiť migráciu dát
+Plán do budúceho stretnutia: 
+- Potrebujeme pristupy k databázam ktoré nám zadávateľ dodá aby sme mohli navrhnúť približnú vyzualizáciu grafov. 
+- Pri najbližšom online(prostredníctvom zdieľaného hovoru) stretnutí nám zádávateľ ukáže funkcionalitu pôvodného projektu. 
+- Spísať poznámky potrebné ku katalógu požiadaviek.
+
+                            
+                            
+
