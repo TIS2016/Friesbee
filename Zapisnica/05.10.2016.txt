@@ -1,0 +1,32 @@
+Zápisnica č. 3
+
+Dátum stretnutia : 05. 10. 2016 
+
+Zoznam prítomných : 
+Michal Kováč
+Filip Špadloň
+Michaela Vavrová 
+Gabiel Halasi 
+Matej Randík 
+
+Body: 
+
+
+1. Online stretnutie, na ktorom nás zadávateľ oboznámil (vizuálne) s pôvodným chodom aplikácie
+2. Spresnil nám požiadavky na zmeny, ktoré bude treba vykonať :
+ -  vyriešiť presperovanie z hlavnej stránky, to môže vidieť aj verejnosť
+ -  po prihlásení ako hráč vidím hráčov môjho klubu, turnaje, umiestnenie môjho tímu
+ -  doplniť filtrovanie
+ -  turnaj má v sebe informácie o kluboch a tímoch, štatistiky turnaja, umiestnenie, spirit
+ -  mapa a na nej označené turnaje (pomôcka : cionmap.org)
+ -  po prihlásení ako admin spravujem databázu, editujem, pridávam hračov, turnaje...
+ -  pri každom treba zminimalizovať počet kliknutí! 
+ 
+Plán do budúceho stretnutia : 
+- vybaviť zadávateľovi prístup na náš Github
+
+
+
+                            
+                            
+
