@@ -1,0 +1,37 @@
+Zápisnica č. 4
+
+Dátum stretnutia : 10. 10. 2016 
+
+Zoznam prítomných : 
+Filip Špadloň
+Michaela Vavrová 
+Gabiel Halasi 
+Matej Randík 
+Pavel Petrovič
+
+
+Prediskutovali sme nasledovné témy:
+  1. bolo by treba používať zenhub, služi na vývoj softvéru, nainštaluje sa to ako doplnok githubu (zenhub.com)
+  2. treba začať používať issue, pridávať všetky vykonávané zmeny, všetko čo sa práve rieši, aj čo sa nebude riešiť a poďla toho mu meniť "status" 
+  3. prediskutovali sme ešte potrebné zmeny, ktoré treba vykonať v katalógu požiadaviek
+    - začiatok funk. požiadavok patrí do kontextu...
+    - malo by to byť členené, majú to byť požiadavky, teda ucelené vety  typu : administrátor klubu môže editovať údaje svojho klubu, každá požiadavka má mať svoje číslo
+    - členenie podľa funkcii, mohli by mať svoj nadpis a požiadavky 
+    - presne popísať čo bude na grafoch, čo bude na xovej osy a čo na y 
+    - ostatné požiadavky nemusia byť nutne napísné
+  4. pozreli sme sa na to , čo nás čaká na najbližšie týždne, treba mať vytvorené diagramy, use case, entitno relačný(nie dátový)-mapuje vzťahy medzi jednotlivými entitami
+    (všetko čo sa dá nazvať pod. menom a hovorí o entitách z reálneho sveta, v našom prípade diagram o hráčoch , turnajoch...), z tohoto diagramu si treba vybrať jednu konktrétnu
+    entitu a pre ňu urobiť stavový diagram (všetky stavy danej entity), vývojový diagram popisuje aktivitu (napr. quicksort, popis varenia) , sekvenčný diagram z jednej funkcionality s use case
+    diagramu (za každou funkcionalitou sa skrývajú nejaké akcie, ktoré sa musia vykonať), u nás bude štartovať nejaký konkrétny používateľ sa chce prihlásiť, zadá svoje údaje, systém musí skontrolovať
+    jeho údaje, on mu povie či sa môže prihlásiť alebo nie
+    - nakresliť užívateľské rozhrania každej jednej stránky, buď ručne na papier alebo v nejakom editore, musí to byť odsúhlasené zadávateľom
+    - dátový model je nový aktualizovaný model databázy, dekompozícia = rozdelenie na základné časti z ktorých sa náš systém skladá
+  5. prezreli sme ganttov diagram, treba doplniť závislosti ak sa dajú(predecessors),a ak sa dá môžme si značiť koľko práce je dokončenej ale nie je to nutné
+  6. požiadavka na dve zápisnice každý týždeň, jedna z nášho stretnutia a jedno so stretnutia so zadávateľom
+
+Plán do budúceho stretnutia: 
+- treba pracovať na diagramoch
+
+                            
+                            
+
