@@ -1,0 +1,25 @@
+Zápisnica č. 5
+
+Dátum stretnutia : 12. 10. 2016 
+
+Zoznam prítomných : 
+Filip Špaldoň
+Michaela Vávrová 
+Gabriel Halasi 
+Matej Randík 
+
+
+
+Venovali sme sa naslednovným bodom:
+  1. Prešli a sme si špecifikáciu požiadaviek aby sme vedeli zostrojiť jednotlivé diagramy.
+  2. Naštudovali sme si podrobnosti o use-case diagramoch, stavových,
+     entitno relačných  a sekvenčných diagramoch. 
+  3. Vypracovali sme prvé verzie z každého diagramu.
+
+
+Plán do budúceho stretnutia: 
+-  pozrieť sa na ďalšie úlohy, ktoré nás čakajú o týždeň
+
+                            
+                            
+
