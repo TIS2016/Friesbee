@@ -1,0 +1,32 @@
+Zápisnica č. 6
+
+Dátum stretnutia : 13. 10. 2016 
+
+Zoznam prítomných : 
+Filip Špaldoň
+Michaela Vavrová 
+Gabriel Halasi 
+Matej Randík 
+Pavel Petrovič
+
+
+Prediskutovali sme nasledovné témy:
+  1. nová verzia kataógu požiadaviek bola znovu skontrolovaná, kontext opraviť, pohľad z nadhľadu na projekt, presnejšie aké turnaje, teda vo Frisbee, 
+     lebo súčastou projektu je webový portál s novou aplikáciou, webový portál je hovotvý len upravujeme niektoré veci a prikladáme zdokonalenú vezriu aplikácie,
+     treba si ešte raz prejst katalóg požiadaviek, skontrolovať, body majú byť nezávislejšie od seba , predošlé-doterajšie, vpravo vyhodiť ale napísať presne na ktorej stránke alebo 
+     že je používateľovi vždy dostupná, a-požiadavka môže byť vymazaná, miesto v tejto tabuľke - v každej tabuľke, čo je v tabulke so zoznamom turnajov, c-čo výsledky jednotlivých zápasov,
+     presnejšie že stĺpcový graf, každý bod musí sám hovoriť o sebe všetko, aby sa nemuseli čítať predchádzajúce požiadavky aby sa pochopil ich význam, ešte môžem rozdeliť do kapitol podstránky
+     turnaje, tímy a hráči; hodilo by sa nejaké "zaškrtávatko" aby sme vedeli zmenšiť počet zobrazených tímov , napr. tím ktorý bol na turnaji viac ako jeden krát, treba evidovať
+     i- ktorý hráč kedy hral a za ktorý tím, či chcem vidieť všetkých hráčov čo v tom tíme hrali alebo aktuálny zoznam hráčov, ktorí naposledy hrali v tomto tíme, a tých ktorí nemajú 
+     iný tím od poslednej hry, j- stlpčeky by mohli byť klikateľné aby sa to dalo usporiadať, pridať návštevníkovy tiež filter pre prehľadávanie tímov a klubov, v tabulke hráči tiež nechať
+     len prezývky, čo je osobná poznámka, používať bud vizitka alebo profil, pridať aj fotku, vytvárať tímy nahradiť - vybrať hráčov klubu pred turanjom, adpim prihlasuje tím na turnaj a tak
+     zadá aj mená,  v hlavnom menu turnaje, kluby, hráči
+  2. skontrolovali sme pripravené grafy.
+
+
+Plán do budúceho stretnutia: 
+-  spýtať sa podrobnosti zadávateľa, napr. kto mení príslušnosť hráča ku klubu a všetky potrebné veci 
+
+                            
+                            
+
