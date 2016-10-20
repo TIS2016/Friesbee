@@ -1,0 +1,27 @@
+Zápisnica č. 8
+
+Dátum stretnutia : 19. 10. 2016 
+
+Zoznam prítomných : 
+Filip Špaldoň
+Michaela Vavrová 
+Gabriel Halasi 
+Matej Randík 
+
+
+
+Prediskutovali sme nasledovné témy:
+  1. Urobili sme ešte potrebné zmeny v diagramoch.
+  2. Naplánovali sme si stretnutie so zadávateľom na pondelok(17:30)
+  3. Dohodli sme sa ako a v čom budeme vytvárať používateľské rozhranie, analýzu technológií, dátový model a dekompozíciu,
+     a nakoniec sme si rozdelili úlohy.  
+  
+               
+              
+
+Plán do budúceho stretnutia: 
+-   každý by sa mal už začať oboznamovať s prácou v Djangu
+
+                            
+                            
+
