@@ -1,0 +1,36 @@
+Zápisnica č. 7
+
+Dátum stretnutia : 19. 10. 2016 
+
+Zoznam prítomných : 
+Filip Špaldoň
+Michaela Vavrová 
+Gabriel Halasi 
+Matej Randík 
+Pavel Petrovič
+
+
+Prediskutovali sme nasledovné témy:
+  1. Zenhub: Treba začať pracovať so zenhubom. Ak nezačneme do budúceho zýždňa -> -10% so známky
+  2. Katalóg požiadaviek: Treba zavesiť na github alebo poslať mailom súhlas zadávateľa s katalógom požiadaviek. 
+  3. Diagramy: Entitno-relačný diagram - čo robí systém pre hráčov, názov tímu nie je atribút klubu, zeskane spirity su atributom hraca,
+                                         hrač je súčasťou tímu, reprezentuje klub; 
+               Stavový - nahlasovanie -> nahalsovaný, mohlo by tam byť ešte "prebehol" - medzi tym že sa vytvorí a  je uzatvorený, 
+                                        je to z hľadiska sveta
+               Sekvenčný -  autorizácia skontroluje údaje, takže zmeniť správne údaje na údaje používateľa, netreba prekreslovať
+  4. požívateľské rozhranie - treba mať každú stránku a podstránku nakreslenú, 
+  5. analýza technológií -  zoznam všetkých technologii, kt. použijeme, v čom to ideme robiť, všetky knižnice, frameworky, rozpísané ako a 
+                            prečo ich ideme použiť, aby sme zistili, či daní technologie nám poskytnú všetko čo budeme potrebovať
+  6. súčaštou návrhu požiadaviek sú všetky diagramy s popisom, a analýza technologii má byť len jednou z kapitol
+  
+               
+               
+
+
+Plán do budúceho stretnutia: 
+-   stretnutie nebude budúci týždeň, budeme komunikovať mailom, splniť úlohy, ktoré treba do utorka, 
+    spracovať používateľské rozhranie, analýzu technológii, dekompozícia úloh , dátový model
+
+                            
+                            
+
