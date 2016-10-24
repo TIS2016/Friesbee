@@ -1,0 +1,24 @@
+Zápisnica č. 9
+
+Dátum stretnutia : 24. 10. 2016 
+
+Zoznam prítomných : 
+Filip Špaldoň
+Michaela Vavrová 
+Gabriel Halasi 
+Matej Randík 
+Michal Kováč
+Marcel  -
+
+
+
+Prediskutovali sme nasledovné témy:
+  1. Zadávateľ nám odsúhlasil používateľské rozhranie po nasledovnom doplnení potrebných údajov.
+  2. Skonzultovali sme údaje potrebné na vyplnenie databázy a následné vytvorenie dátového modelu.
+  3. Prediskutovali sme podrobnosti potrebné k vytvoreniu samotnej aplikácie a databázy, 
+    nový vzťah medzi klubom a Slovenskou asociáciou Frisbee, každoročné povinnosti pre hráča
+    akými sú poplatok pre SAF a zdravotná prehliadka.        
+               
+
+
+
