@@ -11,7 +11,7 @@ Matej Randík
 
 
 
-Prediskutovali sme nasledovné témy:
+Venovali sme sa týmto bodom:
   1. Pracovali sme na dátovom modeli, urobili sme ešte posledné zmeny, ktoré sa žiadali po poslednom stretnutí so zadávateľom,
   2. Vypracovali sme dekompozíciu.  
   3. Prediskutovali sme ako by mohol vyzerať triedny diagram.
