@@ -1,0 +1,28 @@
+Zápisnica č. 10
+
+Dátum stretnutia : 26. 10. 2016 
+
+Zoznam prítomných : 
+Filip Špaldoň
+Michaela Vavrová 
+Gabriel Halasi 
+Matej Randík 
+
+
+
+
+Prediskutovali sme nasledovné témy:
+  1. Pracovali sme na dátovom modeli, urobili sme ešte posledné zmeny, ktoré sa žiadali po poslednom stretnutí so zadávateľom,
+  2. Vypracovali sme dekompozíciu.  
+  3. Prediskutovali sme ako by mohol vyzerať triedny diagram.
+  4. Prešli sme si základnú prácu v Djangu.
+  
+  
+Úlohy do budúceho stretnutia :
+- Vypracovať triedny diagram.
+- Dopísať do návrhu popisy k diagramom.
+- Premyslieť si testovacie scenáre.      
+               
+
+
+
