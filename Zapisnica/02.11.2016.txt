@@ -1,0 +1,14 @@
+Zápisnica è.11
+
+Dátum: 2.11.2016
+Prítomné osoby: Filip Špaldoò, Matej Randik, Michaela Vávrová, Gabriel Halasi
+Prebrané body na stretnutí:
+- navrhli sme triedny diagram
+- dokumentátorke sa poslali dokumenty potrebné na dokonèenie návrhu
+- treba zistit èo sú to testovacie návrhy
+
+Do budúceho stretnutia:
+- všetci by u mali ovláda základy práce s djangom
+
+
+
