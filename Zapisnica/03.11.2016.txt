@@ -1,0 +1,30 @@
+Zápisnica č. 12
+
+Dátum stretnutia : 3. 11. 2016 
+
+Zoznam prítomných : 
+Filip Špadloň
+Michaela Vavrová 
+Gabiel Halasi 
+Pavel Petrovič
+
+
+Na stretnutí sme prebrali nasledovné body:
+  	1. Prediskutovali sme odovzdané materiály:
+	- Dátový model  - pridať popis, idčka by mali byť rovnakého typu(int autoincrement), user-hrac treba opraviť vzdťah v class
+		diagrame na 1:1, môžme vymazať stĺpec foto a pristupovať k nej  podľa idčka, ako zistíme že ktorý používateľ je admin, 
+		z členstva klubu asi vznikne tabuľka, ako je história v klub SAF trebalo by urobiť tabuľku a zaznamenávať históriu klubu, hráč by  		mohol mať ešte informáciu o tom či je to len hráč, admin, superadmin. User by mohol mať typ používateľa(hráč, admin, superadmin).
+	- Triedny diagram - je o údajoch , je tam kopec tried, nie len údaje z databázy ale aj konkrétne triedy ktoré má nás program,
+	- Dekomozícia - tie metódy ktoré patria do jednej triedy treba spojiť, každý z controllerov má svoje stavy, ktoré sa ukladajú do 		nejakých objektov, všetko je rozdelené do tried podľa dát v pamäti, netreba v komponenton diagrame popisovať jednotlivé funkcie,
+		stačí mu názov komponentu, škatulka, kt, ma v rohu značku komponentu, v komponenton diagrame má byť menej ako 10 komponentov, 		rozdelenie podla funckii - prihlasovanie používatelov, vytváranie používatelov, správa turnajov, klubov, platie - to sú hrubé 		komponenty a dnu by mali byť triedy, tých komponentov by nemalo byť viac ako 10 stači ak ich bude 5
+	2. Treba myslieť na bezpečnosť. 
+	3. Treba napísať konrétne knižnice , ktoré budú použité na tvorbu grafov, o djangu treba viac napísať, ako sa čo bude robiť, 
+		dať menej teórie ktorá sa dá jadnoducho násť.
+	4. Body z turnaja alebo score treba pridať do tabuľky, treba zistiť či máme pridať score zo zápasov do tabuľky turnaja,
+	5. Klub SAF je len jeden  a treba zmeniť dátový model, či je SAF jedna celá tabuľka, rok by mohol byť string, aby sa evidovalo za 		ktoré roky sa zaplatilo. 
+
+Plán do budúceho stretnutia: 
+- 
+                            
+                            
+
