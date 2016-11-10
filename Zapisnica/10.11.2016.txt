@@ -1,0 +1,21 @@
+Zápisnica č. 13
+
+Dátum stretnutia : 10. 11. 2016 
+
+Zoznam prítomných : 
+Filip Špadloň
+Michaela Vavrová 
+Gabiel Halasi 
+Matej Randík 
+
+Body: 
+1. Dokončili sme celkový návrh požiadaviek a napísali sme testovacie scenáre.
+
+
+
+Plán do budúceho stretnutia: 
+- Pracovať na projekte. Urobiť prvé features ktoré budú fungovať.
+
+                            
+                            
+
