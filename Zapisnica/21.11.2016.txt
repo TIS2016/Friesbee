@@ -1,0 +1,21 @@
+Zápisnica č. 14
+
+Dátum stretnutia : 21. 11. 2016 
+
+Zoznam prítomných : 
+Filip Špadloň
+Michaela Vavrová 
+Gabiel Halasi 
+Matej Randík 
+
+Body: 
+1. Riešili sme problém so spustením už existujúcej aplikácie. 
+  Opakované inštalovanie na rôznych operačných systémoch bolo neúspešné a končilo rôznymy Errormi.
+
+
+Plán do budúceho stretnutia: 
+- Pracovať na projekte. Vypracovať features ktoré budú fungovať.
+
+                            
+                            
+
