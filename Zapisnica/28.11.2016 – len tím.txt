@@ -1,0 +1,15 @@
+Zápisnica č. 15
+Dátam stretnutia : 28. 11. 2016 
+
+Zoznam prítomných : 
+Filip Špadloň 
+Michaela Vavrová 
+Gabiel Halasi 
+Matej Randík 
+
+
+Body: 
+1. Doplnili sme testovacie scenáre.
+2. Opravili sme detaily v diagramoch.
+3. Podrilo sa spustiť aplikáciu ale ešte stáoe zostávajú nejaké chybové správy.
+4. Kontaktovali sme autorov projektu. 
