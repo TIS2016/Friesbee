@@ -1,0 +1,27 @@
+Zápisnica č. 15
+Dátam stretnutia : 28. 11. 2016 
+
+Zoznam prítomných : 
+Filip Špadloň 
+Michaela Vavrová 
+Gabiel Halasi 
+Matej Randík 
+Pavel Petrovič
+
+Body: 
+1. Prebrali sme náš doterajší prínos.
+2. Získali sme kontakt na autorov projektu, ktorí by nám mohli pomôcť vyriešiť problém so spustením. 
+3. Prešli sme celkový návrh požiadaviek: 
+  - entitno-relačný riadgram: - opraviť reláciumedzi hráčom teamom, ide zmeniť na prihlasuje sa, 
+   teda team hrá na turnaji a team sa prihlasuje na turnaj, (prihlási->zúčastní sa, ide->prihlasuje sa), ešte spojnica, 
+   team hrá zapas na turnaji(relacia spaja tri entity), z prihlasuje môže ísť spojnica na klub
+  - stavový diagram - opraviť názov entity (triedy Turnaje) na entitu Turnaj, 
+    stavový prechod nahlasovanie teamov premenovať na začiatok alebo koniec.
+  -  dekompozícia - komponent, kt. hovorí o klube
+  - Triedny diagram - nemá tam byť typ (varchar50->string), náš uverejnený triedny diagram je v podstate dátový model, 
+  do triedneho diagramu dať tie triedy, ktoré v skutočnosti sú v pythone
+  - testovacie scenáre - malo to byť viac bodov, treba popísať presne ako treba vykonávať akcie, 
+    či poporadí alebo na opakovanie 5 potrebujem spustiť predchádzajúce, napr. urobte akcie 1..5 ok hotovo, dalšia skupina scenárov...
+    cielom jedného testovacieho scenára je niečo urobiť, napr. vykonať,  a čo kluby , 
+    
+Do budúceho stretnutia : doplniť testovacie scenáre aby pokryli väčšinovú funkcionalitu . 
