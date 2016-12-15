@@ -1,0 +1,12 @@
+Zápisnica č. 16
+Dátam stretnutia : 15. 12. 2016
+
+Zoznam prítomných : 
+Filip Špadloň 
+Michaela Vavrová 
+Gabiel Halasi 
+Matej Randík 
+
+Venovali sme sa: 
+Pôvodný projekt funguje skoro bez Errorov u Mateja, na ostatných počítačoch odstraňujeme errory.
+Riešime problem so serverom.
