@@ -1,0 +1,28 @@
+# Database
+# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
+
+import os
+
+PROJECT_DIR = os.path.abspath(os.path.dirname(__file__))
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(PROJECT_DIR, 'frisbee'),
+    }
+}
+
+# or something like this
+
+DATABASES = {
+    'default':{
+        'ENGINE':'django.db.backends.mysql',
+        'NAME': 'frisbee',
+        'USER': 'root',
+        'PASSWORD': '....',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+    'OPTIONS': {
+         "init_command": "SET foreign_key_checks = 0;",
+    },
+    }
+}
