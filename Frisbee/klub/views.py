@@ -7,6 +7,7 @@ import django_tables2 as tables
 from django_tables2 import RequestConfig
 from django.utils.safestring import mark_safe
 from django.utils.encoding import smart_unicode
+from django.template import RequestContext
 
 class SimpleTable(tables.Table):
     nazov = tables.LinkColumn('hraci_klubu', args=[tables.A('id')], orderable=True, empty_values=(), verbose_name= 'Názov')
