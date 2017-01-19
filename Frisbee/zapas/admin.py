@@ -3,6 +3,7 @@ import nested_admin
 from models import Zapas
 
 
+
 class ZapasAdminSelf(nested_admin.NestedAdmin):
     list_display = ['kategoria_turnaju', 'tim_1', 'tim_2', 'vysledok_1', 'vysledok_2']
     list_filter = ['kategoria_turnaju']

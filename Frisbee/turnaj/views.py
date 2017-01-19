@@ -9,6 +9,7 @@ from django_tables2 import RequestConfig
 from django.core.urlresolvers import reverse
 from django.utils.safestring import mark_safe
 from django.utils.encoding import smart_unicode
+from kategoria.models import Kategoria
 
 
 class BaseSimpleTable(tables.Table):
@@ -16,11 +17,11 @@ class BaseSimpleTable(tables.Table):
     datum_od = tables.Column(verbose_name= 'Dátum od',orderable=True)
     datum_do = tables.Column(verbose_name= 'Dátum do',orderable=True)
     datum_zapisu = tables.Column(verbose_name= 'Dátum zápisu',orderable=True)
-    report = tables.Column(verbose_name= 'Report',orderable=True)
+    #report = tables.Column(verbose_name= 'Report',orderable=True)
     
     class Meta:
         model = Turnaj
-        fields = ('kategoria','datum_od','datum_do','datum_zapisu','report')
+        fields = ('kategoria','datum_od','datum_do','datum_zapisu',)
         attrs = {"class": "paleblue"}
         orderable = True
         
@@ -44,14 +45,14 @@ class SimpleTableKlikolNaStat(BaseSimpleTable):
     datum_od = tables.Column(verbose_name= 'Dátum od',orderable=True)
     datum_do = tables.Column(verbose_name= 'Dátum do',orderable=True)
     datum_zapisu = tables.Column(verbose_name= 'Dátum zápisu',orderable=True)
-    report = tables.Column(verbose_name= 'Report',orderable=True)
+    #report = tables.Column(verbose_name= 'Report',orderable=True)
     nazov = tables.LinkColumn('zobraz_timi_turnaja', args=[tables.A('id')], orderable=True, empty_values=(), verbose_name= 'Názov')
     mesto = tables.LinkColumn('zobraz_turnaje_mesta',args=[tables.A('mesto')],verbose_name= 'Mesto',orderable=True)
     zapasy = tables.LinkColumn('zobraz_zapasy_turnaja',args=[tables.A('id')], orderable=False, empty_values=(), verbose_name= 'Zápasy')
     
     class Meta:
         model = Turnaj
-        fields = ('nazov','kategoria','datum_od','datum_do','mesto','datum_zapisu','report')
+        fields = ('nazov','kategoria','datum_od','datum_do','mesto','datum_zapisu',)
         attrs = {"class": "paleblue"}
         orderable = True
 
@@ -60,14 +61,14 @@ class SimpleTableKlikolNaMesto(BaseSimpleTable):
     datum_od = tables.Column(verbose_name= 'Dátum od',orderable=True)
     datum_do = tables.Column(verbose_name= 'Dátum do',orderable=True)
     datum_zapisu = tables.Column(verbose_name= 'Dátum zápisu',orderable=True)
-    report = tables.Column(verbose_name= 'Report',orderable=True)
+    #report = tables.Column(verbose_name= 'Report',orderable=True)
     nazov = tables.LinkColumn('zobraz_timi_turnaja', args=[tables.A('id')], orderable=True, empty_values=(), verbose_name= 'Názov')
     stat = tables.LinkColumn('zobraz_turnaje_statu',args=[tables.A('stat')],verbose_name= 'Štát',orderable=True)
     zapasy = tables.LinkColumn('zobraz_zapasy_turnaja',args=[tables.A('id')], orderable=False, empty_values=(), verbose_name= 'Zápasy')
     
     class Meta:
         model = Turnaj
-        fields = ('nazov','kategoria','datum_od','datum_do','stat','datum_zapisu','report')
+        fields = ('nazov','kategoria','datum_od','datum_do','stat','datum_zapisu',)
         attrs = {"class": "paleblue"}
         orderable = True
         
@@ -76,7 +77,7 @@ class SimpleTable(BaseSimpleTable):
     datum_od = tables.Column(verbose_name= 'Dátum od',orderable=True)
     datum_do = tables.Column(verbose_name= 'Dátum do',orderable=True)
     datum_zapisu = tables.Column(verbose_name= 'Dátum zápisu',orderable=True)
-    report = tables.Column(verbose_name= 'Report',orderable=True)
+    #report = tables.Column(verbose_name= 'Report',orderable=True)
     nazov = tables.LinkColumn('zobraz_timi_turnaja', args=[tables.A('id')], orderable=True, empty_values=(), verbose_name= 'Názov')
     stat = tables.LinkColumn('zobraz_turnaje_statu',args=[tables.A('stat')],verbose_name= 'Štát',orderable=True)
     mesto = tables.LinkColumn('zobraz_turnaje_mesta',args=[tables.A('mesto')],verbose_name= 'Mesto',orderable=True)
@@ -84,14 +85,29 @@ class SimpleTable(BaseSimpleTable):
     
     class Meta:
         model = Turnaj
-        fields = ('nazov','kategoria','datum_od','datum_do', 'stat','mesto','datum_zapisu','report')
+        fields = ('nazov','kategoria','datum_od','datum_do', 'stat','mesto','datum_zapisu',)
         attrs = {"class": "paleblue"}
         orderable = True
+
+class SimpleTable2(BaseSimpleTable):
+    kategoria = tables.Column(verbose_name= 'Kategória',orderable=True)
+    datum_od = tables.Column(verbose_name= 'Dátum od',orderable=True)
+    datum_do = tables.Column(verbose_name= 'Dátum do',orderable=True)
+##    datum_zapisu = tables.Column(verbose_name= 'Dátum zápisu',orderable=True)
+    #report = tables.Column(verbose_name= 'Report',orderable=True)
+    nazov = tables.LinkColumn('zobraz_timi_turnaja', args=[tables.A('id')], orderable=True, empty_values=(), verbose_name= 'Názov')
+    stat = tables.LinkColumn('zobraz_turnaje_statu',args=[tables.A('stat')],verbose_name= 'Štát',orderable=True)
+    mesto = tables.LinkColumn('zobraz_turnaje_mesta',args=[tables.A('mesto')],verbose_name= 'Mesto',orderable=True)
+##    zapasy = tables.LinkColumn('zobraz_zapasy_turnaja',args=[tables.A('id')], orderable=False, empty_values=(), verbose_name= 'Zápasy')
     
+    class Meta:
+        model = Turnaj
+        fields = ('nazov','kategoria','datum_od','datum_do', 'stat','mesto',)
+        attrs = {"class": "paleblue"}
+        orderable = True
         
         
 def turnaj(request):
-    
     button = mark_safe('''
     <form action="#" method="get">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -112,8 +128,11 @@ def turnaj(request):
     </p>
   
     </form>
+    <br>
+    
     ''')
     
+    categories = Kategoria.objects.all()
     queryset = None
     if request.GET.get('mybtn') and request.GET.get("start") and request.GET.get("end"):
         od = request.GET.get("start")
@@ -127,19 +146,70 @@ def turnaj(request):
         queryset= Turnaj.objects.filter(datum_od__range=[od,do])
     else:
         queryset= Turnaj.objects.all()
-    
-    nazov = smart_unicode("Turnaje")
+
     for turnaj in queryset:
         kategorieturnaju = KategoriaTurnaju.objects.filter(turnaj=turnaj.id)
         turnaj.kategoria = kategorieturnaju
+    nazov = smart_unicode("Turnaje")
     table = SimpleTable(queryset)
     RequestConfig(request).configure(table)
-    obsah = mark_safe("<h1>" + nazov + "</h1><section>" + smart_unicode("Zobrazenie všetkých Turnajov") + "</section>")
-    return render_to_response("table.html", {"table": table,"nazov":nazov,"obsah":obsah, "button":button})
-
     
-   # return render (request , "turnaj.html" , {'turnaje': turnaje })
+    cname = request.POST.get("dropdown1")
+    if cname is not None:
+        catid = Kategoria.objects.filter(nazov=cname).values('id')[0]['id']
+        if request.method == 'POST':
+            turn_id = KategoriaTurnaju.objects.filter(kategoria_id=smart_unicode(catid))
+            queryset2 = Turnaj.objects.filter(id__in = [i.turnaj_id for i in turn_id])
+            for i in turn_id:
+                cnames = Kategoria.objects.filter(id__in = [i.kategoria_id for i in turn_id])
+                cnames = ''.join(str(e) for e in cnames)
+
+        else:
+            pass
+    ##        queryset = Turnaj.objects.all()
+        for turnaj in queryset2:
+            kategorieturnaju = KategoriaTurnaju.objects.filter(turnaj=turnaj.id)
+            turnaj.kategoria = kategorieturnaju
+        table2 = SimpleTable(queryset2)
+        RequestConfig(request).configure(table2)
+    else:
+        queryset2 = None
+        cnames = "Vyberte kategóriu"
+        table2 = None
+    nazov = smart_unicode("Turnaje")
+    try:
+        obsah = mark_safe("<h1>" + nazov + "</h1><section>" + smart_unicode("Zobrazenie Turnajov pomocou dátumu a filtra") + "</section>")
+    except IndexError:
+        obsah = mark_safe("<h1>NEEXISTUJE KATEGORIA</h1>")
+        table=Turnaj.objects.none()
+    if queryset2 is None: 
+        return render(request,"turnaj.html", {"table": table, "nazov":nazov,"obsah":obsah, "button":button,"cat":categories, "kat_name": cnames,})
+    return render(request,"turnaj.html", {"table": table2, "nazov":nazov,"obsah":obsah, "button":button,"cat":categories, "kat_name": cnames,})
+    
 # Create your views here.
+
+def filter_turnaj(request):
+    categories = Kategoria.objects.all()
+    cname = request.POST.get("dropdown1")
+    catid = Kategoria.objects.filter(nazov=cname).values('id')[0]['id']
+    if request.method == 'POST':
+        turn_id = KategoriaTurnaju.objects.filter(kategoria_id=smart_unicode(catid))
+        queryset = Turnaj.objects.filter(id__in = [i.turnaj_id for i in turn_id])
+        for i in turn_id:
+            cnames = Kategoria.objects.filter(id__in = [i.kategoria_id for i in turn_id])
+    else:
+        pass
+##        queryset = Turnaj.objects.all()
+    nazov = smart_unicode("Filtrovane turnaje")
+    table = SimpleTable(queryset)
+    RequestConfig(request).configure(table)
+    try:
+        obsah = mark_safe("<h1>" + nazov + "</h1><section>" + smart_unicode("Zobrazenie Turnajov podla Filtra") + "</section>")
+    except IndexError:
+        obsah = mark_safe("<h1>NEEXISTUJE KATEGORIA</h1>")
+        table=Turnaj.objects.none()
+    return render(request,"turnaj.html",{"table":table, "nazov":nazov, "obsah":obsah, "cat":categories, "kat_name":cnames,})
+
 
 from tim.views import SimpleTableKlikolTurnaj
 from zapas.views import SimpleTableOdTurnaja 
@@ -149,19 +219,23 @@ def zobraz_zapasy_turnaja(request,id):
     kategorieTurnajov = KategoriaTurnaju.objects.filter(turnaj=id)
     queryset = Zapas.objects.filter(kategoria_turnaju__in=kategorieTurnajov)
     table = SimpleTableOdTurnaja(queryset)
-    RequestConfig(request).configure(table)
     turnaj = Turnaj.objects.filter(id=id)
     try:
         obsah = mark_safe("<h1>" + nazov + " " + smart_unicode(turnaj[0]) + "</h1><section>" + smart_unicode("Zobrazenie zápasou  Turnaja") + "</section>")
     except IndexError:
         obsah = mark_safe("<h1>NEEXISTUJU ZÁPASY PRE DANÝ TURNAJ</h1>")
         table=Zapas.objects.none()
-    return render_to_response("table.html", {"table": table,"nazov":nazov,"obsah":obsah})
+    RequestConfig(request).configure(table)
+    return render(request,"table.html", {"table": table,"nazov":nazov,"obsah":obsah})
 
 def zobraz_timi_turnaja(request,id_turnaja):  
     nazov = smart_unicode("Tímy Turnaja")
-    kategorieTurnajov = KategoriaTurnaju.objects.filter(turnaj=id_turnaja)
-    queryset= Tim.objects.filter(id__in=kategorieTurnajov)
+##    kategorieTurnajov = KategoriaTurnaju.objects.filter(turnaj=id_turnaja)
+##    queryset= Tim.objects.filter(id__in=kategorieTurnajov)
+    queryset = Tim.objects.all()
+    for turnaj in queryset:
+        kategorieTurnajov = KategoriaTurnaju.objects.filter(turnaj=id_turnaja)
+        turnaj.kategoria = kategorieTurnajov
     table = SimpleTableKlikolTurnaj(queryset)
     RequestConfig(request).configure(table)
     
@@ -170,7 +244,8 @@ def zobraz_timi_turnaja(request,id_turnaja):
         obsah = mark_safe("<h1>" + nazov + " " + smart_unicode(turnaj[0]) + "</h1><section" + smart_unicode("Zobrazenie Tímov  Turnaja ") + "</section>")
     except IndexError:
         obsah = mark_safe("<h1>NEEXISTUJU TÍMY PRE DANÝ TURNAJ</h1>")
-    return render_to_response("table.html", {"table": table,"nazov":nazov,"obsah":obsah})
+    return render(request,"table.html", {"table": table,"nazov":nazov,"obsah":obsah})
+
 
 def zobraz_turnaje_statu(request,stat):
     button = mark_safe('''
@@ -220,7 +295,7 @@ def zobraz_turnaje_statu(request,stat):
     except IndexError:
         obsah = mark_safe("<h1>" + nazov + " " + stat + "</h1><section>" + smart_unicode("Zobrazenie turnajov v danom štáte") + "</section>")
     RequestConfig(request).configure(table)
-    return render_to_response("table.html", {"table": table,"nazov":nazov,"obsah":obsah, "button":button})  
+    return render(request,"table.html", {"table": table,"nazov":nazov,"obsah":obsah, "button":button})  
 
 def zobraz_turnaje_mesta(request,mesto):
     button = mark_safe('''
@@ -271,4 +346,10 @@ def zobraz_turnaje_mesta(request,mesto):
         obsah = mark_safe("<h1>" + nazov + " " + smart_unicode(queryset[0].mesto) + "</h1><section>" + smart_unicode("Zobrazenie turnajov v danom meste") + "</section>")
     except IndexError:
         obsah = mark_safe("<h1>" + nazov + " " + mesto + "</h1><section>" + smart_unicode("Zobrazenie turnajov v danom meste") + "</section>")
-    return render_to_response("table.html", {"table": table,"nazov":nazov,"obsah":obsah, "button":button})  
+    return render(request,"table.html", {"table": table,"nazov":nazov,"obsah":obsah, "button":button})  
+
+def get_or_none(model, *args, **kwargs):
+    try:
+        return model.objects.get(*args, **kwargs)
+    except model.DoesNotExist:
+        return None

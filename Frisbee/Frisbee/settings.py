@@ -26,15 +26,19 @@ SECRET_KEY = 'ia#-)v5ddvhy5fur%d9pref(aiuksyf2#6j!rr%b^$yfl@$j0^'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+SESSION_ENGINE = 'django.contrib.sessions.backends.signed_cookies'
+
 
 
 # Application definition
 
 INSTALLED_APPS = (
-    'nested_admin',
+    'dal',
+    'dal_select2',
     'grappelli',
-    'django_tables2',
+    'nested_admin',
     'django.contrib.admin',
+    'django_tables2',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -49,8 +53,11 @@ INSTALLED_APPS = (
     'klub',
     'hrac',
     'hracTimu',
+    'platby',
+    'kategoriaPlatieb',
     
 )
+
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -62,6 +69,8 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
 )
+
+
 
 ROOT_URLCONF = 'Frisbee.urls'
 PROJECT_ROOT = os.path.realpath(os.path.dirname(__file__))
@@ -81,7 +90,17 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'Frisbee.wsgi.application'
+
+AUTHENTICATION_BACKENDS = (
+	('django.contrib.auth.backends.ModelBackend'),
+)
+
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'frisbee.hashers.PBKDF2WrappedSHA1PasswordHasher',
+]
 
 SUIT_CONFIG = {
     #'SEARCH_URL': '/admin/hrac/hrac/',

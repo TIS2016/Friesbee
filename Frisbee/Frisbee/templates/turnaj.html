@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+{% block title %} {{ nazov }} {% endblock %}
+{% block content %}
+
+{{ obsah }}
+
+{{ button }}
+<form action="{% url 'turnaj' %}" method="POST" name="dropdown1">{% csrf_token %}
+	<h3> Hľadaj Turnaj podľa kategórie</h3>
+	<select class="filt-tur" name="dropdown1">
+		{% for i in cat %}
+		<option value="{{ i.nazov }}" >{{ i.nazov }}</option>
+		{% endfor %}
+	</select>
+	<input type="submit" value="Filter">
+	<p>Kategoria: {{ kat_name }}</p>
+</form>
+<br>
+
+{% load django_tables2 %}
+{% if table.data.0 != None %}
+{% render_table table %}
+{% else %}
+Nie sú žiadne údaje.
+{% endif %}      
+{% endblock %}

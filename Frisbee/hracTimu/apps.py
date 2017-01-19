@@ -2,6 +2,6 @@
 from django.apps import AppConfig
 from django.utils.encoding import smart_unicode
 
-class YourAppConfig(AppConfig):
+#class YourAppConfig(AppConfig):
     name = 'hracTimu'
     verbose_name = smart_unicode('Súťaže')

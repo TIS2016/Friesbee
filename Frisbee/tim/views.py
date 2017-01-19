@@ -38,7 +38,7 @@ class SimpleTableKlikolTurnaj(BaseSimpleTable):
 
     class Meta:
         model = Tim
-        fields = ('umiestnenie','nazov','klub', 'spirit')
+        fields = ('nazov','klub','umiestnenie', 'spirit')
         attrs = {"class": "paleblue"}
         orderable = True
 
@@ -67,35 +67,38 @@ def tim(request):
     table = SimpleTable(queryset)
     RequestConfig(request).configure(table)
     obsah = mark_safe("<h1>" + nazov + "</h1><section>"+smart_unicode("Zobrazenie všetkých tímov")+ "</section>")
-    return render_to_response("table.html", {"table": table,"nazov":nazov,"obsah":obsah})
+    return render(request,"table.html", {"table": table,"nazov":nazov,"obsah":obsah})
 
 from hrac.views import SimpleTable as SimpleTableHrac
 from hrac.views import SimpleTableKlikolNaKlub
 from zapas.views import SimpleTable as SimpleTableZapas
+from hrac.views import SimpleTable2 as SimpleTableHrac2
 
 def zobraz_hracov_timu(request, id_timu):
-    nazov = smart_unicode("Hráči Tímu")
+    nazov = smart_unicode("Hráči tímu")
+    turnaj_q = list(Turnaj.objects.filter(id__in=KategoriaTurnaju.objects.filter(turnaj_id__in=Tim.objects.filter(id__in = id_timu).values('kategoria_turnaju_id'))))
+    turnaj = ''.join(str(e) for e in turnaj_q)
     query = HracTimu.objects.filter(tim=id_timu).values('hrac')
     samotnyHraci = Hrac.objects.filter(id__in=query)
     table = SimpleTableHrac(samotnyHraci)
     tim = Tim.objects.filter(id=id_timu)
-    obsah = mark_safe("<h1>" + nazov + " " + smart_unicode(tim[0].nazov) + "</h1><section>"+smart_unicode("Zobrazenie hráčov daného tímu")+ "</section>")
+    obsah = mark_safe("<h1>" + nazov + " " + smart_unicode(tim[0].nazov) + " na turnaji " +turnaj +"</h1><section>"+ "</p>" + smart_unicode("Tabuľka obsahuje podrobnejšie údaje o hráčoch zo zvoleného tímu.<br> Stĺpec poznámka obsahuje zvláštnu informáciu o danom hráčovi. Počet spiritov sa eviduje len za tento zápas.") + "</p>"+ "</section>")
     RequestConfig(request).configure(table)
-    return render_to_response("table.html", {"table": table,"nazov":nazov,"obsah":obsah})
+    return render(request,"table.html", {"table": table,"nazov":nazov,"obsah":obsah})
 
 def zobraz_hracov_klubu(request, id_klubu):
     nazov = smart_unicode("Hráči Klubu")
     queryset = Hrac.objects.filter(klub=id_klubu)
     table = SimpleTableKlikolNaKlub(queryset)
     RequestConfig(request).configure(table)
-    return render_to_response("table.html", {"table": table,"nazov": nazov})
+    return render(request,"table.html", {"table": table,"nazov": nazov})
 
 def zobraz_timi_turnaja(request, id_turnaja):
     nazov = smart_unicode("Tímy Turnaja")
     queryset = Tim.objects.filter(turnaj=id_turnaja)
     table = SimpleTable(queryset)
     RequestConfig(request).configure(table)
-    return render_to_response("table.html", {"table": table,"nazov":nazov})
+    return render(request,"table.html", {"table": table,"nazov":nazov})
 
 def zobraz_zapasy_timu(request, id_timu):
     nazov = smart_unicode("Zápasy Tímu")
@@ -104,4 +107,4 @@ def zobraz_zapasy_timu(request, id_timu):
     RequestConfig(request).configure(table)
     tim = Tim.objects.filter(id=id_timu)
     obsah = mark_safe("<h1>" + nazov + " " + smart_unicode(tim[0].nazov) + "</h1><section>"+smart_unicode("Zobrazenie zápasov daného tímu")+ "</section>")
-    return render_to_response("table.html", {"table": table,"nazov":nazov, 'obsah': obsah})
+    return render(request,"table.html", {"table": table,"nazov":nazov, 'obsah': obsah})

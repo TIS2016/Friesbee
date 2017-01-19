@@ -3,13 +3,19 @@ import nested_admin
 from models import Hrac
 from django.contrib.auth.models import User
 from hracTimu.admin import HracTimuAdmin
+from django import forms
+
+
 
 
 class HracAdminSelf(nested_admin.NestedAdmin):
-    list_display = ['prezivka','krstne_meno', 'priezvisko', 'pohlavie', 'telefonne_cislo', 'miesto_bydliska', 'datum_narodenia', 'uzivatel', 'klub', 'foto', 'poznamka']
+    list_display = ['prezyvka','krstne_meno', 'priezvisko', 'pohlavie', 'telefonne_cislo', 'miesto_bydliska', 'datum_narodenia', 'uzivatel', 'klub', 'foto', 'poznamka']
     list_filter = ['klub']
-    search_fields = ['prezivka', 'krstne_meno', 'priezvisko']
+    search_fields = ['prezyvka', 'krstne_meno', 'priezvisko']
     inlines = [HracTimuAdmin]
+
+
+	
     
 admin.site.register(Hrac, HracAdminSelf)
 
@@ -22,6 +28,7 @@ class HracAdmin(nested_admin.NestedStackedInline):
     
 class UserAdmin(nested_admin.NestedAdmin):
     inlines = [HracAdmin]
+    
     
     
 admin.site.unregister(User)

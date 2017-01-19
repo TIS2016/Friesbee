@@ -11,10 +11,15 @@ from django.template import RequestContext
 
 class SimpleTable(tables.Table):
     nazov = tables.LinkColumn('hraci_klubu', args=[tables.A('id')], orderable=True, empty_values=(), verbose_name= 'Názov')
+    pocet_hracov = tables.Column(verbose_name='Počet hráčov', orderable=True)
+    pocet_vyhier = tables.Column(verbose_name='Počet výhier', orderable=True)
+    pocet_prehier = tables.Column(verbose_name='Počet prehier', orderable=True)
+    spirit = tables.Column(verbose_name='Spirity',orderable=True, empty_values=())
+    
     
     class Meta:
         model = Klub
-        fields = ('nazov', )
+        fields = ('nazov', 'pocet_hracov', 'pocet_vyhier', 'pocet_prehier', 'spirit' ,)
         attrs = {"class": "paleblue"}
         orderable = True
 
@@ -25,4 +30,4 @@ def klub(request):
     table = SimpleTable(queryset)
     RequestConfig(request).configure(table)
     obsah = mark_safe("<h1>" + nazov + "</h1><section>" + smart_unicode('Zobrazenie všetkých Klubov') +" </section>")
-    return render_to_response("table.html", {"table": table,"nazov":nazov,"obsah":obsah},context_instance=RequestContext(request))
+    return render(request,"table.html", {"table": table,"nazov":nazov,"obsah":obsah},)

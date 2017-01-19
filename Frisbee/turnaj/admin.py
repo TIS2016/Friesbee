@@ -7,7 +7,7 @@ from kategoriaTurnaju.models import KategoriaTurnaju
 from hracTimu.models import HracTimu
 from kategoriaTurnaju.admin import KategoriaTurnajuAdmin
 from zapas.models import Zapas
-
+from django import forms
 
 
 class HracInlineAdmin(nested_admin.NestedStackedInline):

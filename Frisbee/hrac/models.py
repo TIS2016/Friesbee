@@ -27,7 +27,7 @@ class Hrac(models.Model):
     miesto_bydliska = models.CharField(max_length=255,null=True, blank=True)
     
     
-    prezivka = models.CharField(max_length = 50)
+    prezyvka = models.CharField(max_length = 50)
     foto = models.CharField(max_length = 250, null=True, blank=True,default='')
     poznamka = models.CharField(max_length = 250, null=True, blank=True)
     
@@ -38,10 +38,10 @@ class Hrac(models.Model):
         app_label ="frisbee"
         
     def __str__(self):
-        return self.prezivka
+        return self.prezyvka
     
     def __repr__(self):
-        return self.prezivka
+        return self.prezyvka
     
     def __unicode__(self): 
-        return smart_unicode(self.prezivka)
+        return smart_unicode(self.prezyvka)

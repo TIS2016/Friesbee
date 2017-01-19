@@ -8,6 +8,7 @@ from django.core.urlresolvers import reverse
 from django.utils.encoding import smart_unicode
 from kategoriaTurnaju.models import KategoriaTurnaju
 from turnaj.models import Turnaj
+from django.template import RequestContext
 
 class SimpleTable(tables.Table):
     vysledok_1 = tables.Column(verbose_name= 'Výsledok',orderable=True)
@@ -48,5 +49,5 @@ def zapas(request):
     table = SimpleTable(queryset)
     RequestConfig(request).configure(table)
     obsah = mark_safe(smart_unicode("<h1>" + nazov + "</h1><section>Zobrazenie všetkých Zápasou </section>"))
-    return render_to_response("table.html", {"table": table,"nazov": nazov,"obsah":obsah})
+    return render(request,"table.html", {"table": table,"nazov": nazov,"obsah":obsah})
 # Create your views here.

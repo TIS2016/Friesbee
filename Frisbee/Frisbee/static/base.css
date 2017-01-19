@@ -16,6 +16,9 @@ body {
     font: 100%/30px calibri,'Helvetica Neue', helvetica, arial, sans-serif;
     text-shadow: 0 1px 0 #fff;
 }
+.filt-tur {
+   margin: 10px 5px;
+}
 .wrapper{
     min-height: 100%;
     text-align: center;
@@ -75,6 +78,14 @@ color:rgba(0, 0, 0, 0);
   text-align:center;
   text-shadow:rgba(255, 255, 255, 0.247059) 0.05em 0.05em 0.05em, #B0B0B0 0 0 0;
   }
+
+
+table.paleblue td.umiestnenie{
+	text-align:center;
+}
+table.paleblue td.spirit{
+	text-align:center;
+}
 .round {
             display:block;
             width: 100px;

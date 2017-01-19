@@ -30,6 +30,10 @@ table.paleblue th {
     text-align: left;
 }
 
+table.paleblue td.umiestnenie {
+    text-align: center;
+}
+
 table.paleblue thead th:first-child,
 table.paleblue thead td:first-child {
     border-left: none !important;
@@ -137,4 +141,7 @@ div.table-container {
 .round2 img {
             height: 46px;  
             width: 46px;
+}
+option.filt-tur {
+	margin: 10px 5px;
 }

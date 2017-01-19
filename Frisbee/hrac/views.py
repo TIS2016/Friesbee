@@ -15,6 +15,7 @@ from django.utils.encoding import smart_unicode
 
 
 
+
 class BaseSimpleTable(tables.Table): 
     krstne_meno = tables.Column(verbose_name= 'Krstné meno',orderable=True)
     priezvisko = tables.Column(verbose_name= 'Priezvisko',orderable=True)
@@ -47,36 +48,49 @@ class BaseSimpleTable(tables.Table):
 
 class SimpleTable(BaseSimpleTable):
     foto = tables.Column(verbose_name= 'Foto',orderable=True,empty_values=())
-    prezivka = tables.LinkColumn('turnaj_hraca', args=[tables.A('id')], orderable=True, empty_values=(), verbose_name= 'Prezívka')
+    prezyvka = tables.LinkColumn('turnaj_hraca', args=[tables.A('id')], orderable=True, empty_values=(), verbose_name= 'Prezývka')
     klub = tables.Column(verbose_name= 'Klub',orderable=True)
     
     
     class Meta:
         model = Hrac
-        fields = ('foto','prezivka','priezvisko', 'pohlavie', 'krstne_meno','klub','poznamka')
+        fields = ('foto','prezyvka','klub','priezvisko', 'pohlavie', 'krstne_meno','poznamka')
+        attrs = {"class": "paleblue"}
+        orderable = True
+
+
+class SimpleTable2(BaseSimpleTable):
+    foto = tables.Column(verbose_name= 'Foto',orderable=True,empty_values=())
+    prezyvka = tables.LinkColumn('turnaj_hraca', args=[tables.A('id')], orderable=True, empty_values=(), verbose_name= 'Prezývka')
+    klub = tables.Column(verbose_name= 'Klub',orderable=True)
+    
+    
+    class Meta:
+        model = Hrac
+        fields = ('foto','prezyvka','klub',)
         attrs = {"class": "paleblue"}
         orderable = True
     
 # Create your views here.
 class SimpleTableKlikolNaKlub(BaseSimpleTable):
     foto = tables.Column(verbose_name= 'Foto',orderable=True,empty_values=())
-    prezivka = tables.LinkColumn('turnaj_hraca', args=[tables.A('id')], orderable=True, empty_values=(), verbose_name= 'Prezívka')
+    prezyvka = tables.LinkColumn('turnaj_hraca', args=[tables.A('id')], orderable=True, empty_values=(), verbose_name= 'Prezývka')
     
     class Meta:
         model = Hrac
-        fields = ('foto','prezivka','priezvisko', 'pohlavie', 'krstne_meno','poznamka')
+        fields = ()
         attrs = {"class": "paleblue"}
         orderable = True
 
 def hrac(request):
     queryset = Hrac.objects.all()
     nazov = 'Hráči'
-    obsah = mark_safe("<h1>" + nazov + "</h1><section>Zobrazenie všetkých hráčov </section>")
+    obsah = mark_safe("<h1>" + nazov + "</h1><section>Zobrazenie všetkých hráčov</section>")
     table = SimpleTable(queryset)
     RequestConfig(request).configure(table)
-    return render_to_response("table.html", {"table": table,"nazov": nazov,"obsah":obsah })
+    return render(request,"table.html", {"table": table,"nazov": nazov,"obsah":obsah })
 
-from turnaj.views import SimpleTable as SimpleTableTurnaj
+from turnaj.views import SimpleTable2 as SimpleTableTurnaj
 
 def turnaj_hraca (request, id):
     button = mark_safe('''
@@ -101,12 +115,15 @@ def turnaj_hraca (request, id):
     </form>
     ''')
     
-    nazov = smart_unicode("Turnaje Hráča")
+    nazov = smart_unicode("Vizitka Hráča")
     hracitimu = HracTimu.objects.filter(hrac = id).values('tim')
     timy = Tim.objects.filter(id__in=hracitimu).values('kategoria_turnaju')
     kategorieTurnajov = KategoriaTurnaju.objects.filter(id__in=timy).values('turnaj')
     hrac = Hrac.objects.filter(id=id)
     queryset = Turnaj.objects.filter(id__in=kategorieTurnajov)
+    print(queryset,'ez a queryset')
+    print(hrac, 'ez a hrac')
+    print(kategorieTurnajov, 'kategoria')
     
     if request.GET.get('mybtn') and request.GET.get("start") and request.GET.get("end"):
         od = request.GET.get("start")
@@ -135,7 +152,7 @@ def turnaj_hraca (request, id):
         spirit = 'Spirit: ' + str(pocetSpiritov) + '<br>'
         pohlavie = 'Pohlavie: ' + smart_unicode(hrac[0].pohlavie) + '<br>'
         profil = "<div class='profil'>" + '<h3>Profil</h3>'+ meno + klub + pohlavie + spirit + '</div>'
-        obsah = mark_safe("<h1>" + nazov + " " +smart_unicode(hrac[0].prezivka) + "</h1><section><div class='round'><img src='" + smart_unicode(hrac[0].foto) + "'></div> " + profil + " </section>")
+        obsah = mark_safe("<h1>" + nazov + " " +smart_unicode(hrac[0].prezyvka) + "</h1><section><div class='round'><img src='" + smart_unicode(hrac[0].foto) + "'></div> " + profil + " </section>")
     else:
         hracitimu = HracTimu.objects.filter(hrac = id).values('tim')
         timy = Tim.objects.filter(id__in=hracitimu).values('zapas_tim')
@@ -146,9 +163,8 @@ def turnaj_hraca (request, id):
         spirit = 'Spirit: ' + str(pocetSpiritov) + '<br>'
         pohlavie = 'Pohlavie: ' + smart_unicode(hrac[0].pohlavie) + '<br>'
         profil = "<div class='profil'>" + '<h3>Profil</h3>'+ meno + klub + pohlavie + spirit + '</div>'
-        obsah = mark_safe("<h1>" + nazov + " " +smart_unicode(hrac[0].prezivka) + "</h1><section><div class='round'><img src='" + 'https://secure.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=320' + "'></div> " + profil + " </section>")
-    return render_to_response("table.html", {"table": table,"nazov": nazov,"obsah":obsah, "button":button})
-   
+        obsah = mark_safe("<h1>" + nazov + " " +smart_unicode(hrac[0].prezyvka) + "</h1><section><div class='round'><img src='" + 'https://secure.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=320' + "'></div> " + profil + " </section>")
+    return render(request,"table.html", {"table": table,"nazov": nazov,"obsah":obsah, "button":button})
 
 def hraci_klubu(request,id):
     nazov = smart_unicode('Hráči Klubu')
@@ -159,11 +175,11 @@ def hraci_klubu(request,id):
         nazov_klubu = None
         if queryset[0].klub is not None:
             nazov_klubu = smart_unicode(queryset[0].klub)
-            obsah = mark_safe("<h1>" + nazov + " "+ nazov_klubu +"</h1><section>"+ smart_unicode('Zobrazenie všetkých Klubov') +"</section>")
+            obsah = mark_safe("<h1>" + nazov + " "+ nazov_klubu +"</h1><section>"+ smart_unicode('Zobrazenie všetkých Hráčov') +"</section>")
         else:
            obsah = mark_safe("<h1>NEEXISTUJÚ HRÁČI PRE DANÝ KLUB</h1>") 
     else:
         obsah = mark_safe("<h1>NEEXISTUJÚ HRÁČI PRE DANÝ KLUB</h1>")
     RequestConfig(request).configure(table)
-    return render_to_response("table.html", {"table": table,"nazov": nazov,"obsah":obsah})
+    return render(request,"table.html", {"table": table,"nazov": nazov,"obsah":obsah})
     
