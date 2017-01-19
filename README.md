@@ -4,10 +4,10 @@ Databaza turnajov friesbee
 Instalacia python 2.7 + pip.
 
 sudo apt-get install python2.7
-
 sudo apt-get install python-pip python-dev build-essential
 
 Instalacia Djanga a doplnkov.
+
 pip install -r requirements.txt
 
 Vytvorenie mysql databazy.
