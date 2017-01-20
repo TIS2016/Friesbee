@@ -168,8 +168,6 @@ public class OutsiterzMigracia {
 		timiFrisbee = PrerobDoSetu(timiFrisbee);
 	}
 
-	
-
 	private KategoriaTurnajuFrisbeeModel getFrisbeeKategoriaTurnaju(
 			KategoriaFrisbeeModel kategoriaFrisbee,
 			TurnajFrisbeeModel turnajFrisbee) throws Exception {

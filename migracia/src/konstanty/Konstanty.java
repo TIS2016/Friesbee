@@ -182,7 +182,7 @@ public class Konstanty extends CustomKonstanty {
 	public final static String frisbeeTableHrac_oldId = "old_id";
 	public final static String frisbeeTableHrac_krstneMeno = "krstne_meno";
 	public final static String frisbeeTableHrac_priezvisko = "priezvisko";
-	public final static String frisbeeTableHrac_prezivka = "prezivka";
+	public final static String frisbeeTableHrac_prezivka = "prezyvka";
 	public final static String frisbeeTableHrac_foto = "foto";
 	public final static String frisbeeTableHrac_poznamka = "poznamka";
 	public final static String frisbeeTableHrac_klubId = "klub_id";

@@ -32,17 +32,16 @@ public class SafMigracia {
       source_path = args[0];
     }
     
-      
     ArrayList<Hrac> hraci = new ArrayList<Hrac>();
           
     BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(source_path),"utf8"));
 
-      
+    br.readLine(); // ignore header, we want to parse just the data
     String riadok = br.readLine();
     int lineNumber = 1;
    
     while (riadok != null) {    
-      String[] splited = riadok.split("\\|");
+      String[] splited = riadok.split("\\t");
       ArrayList<String> temp = new ArrayList<String>(Arrays.asList(splited));
       ArrayList<String> list = new ArrayList<String>();
       for (String prvok: temp){
@@ -142,8 +141,8 @@ class MojaDatabase extends connection.Database{
           );
       } else {
         sql = String.format("INSERT INTO frisbee_hrac " +
-          "(krstne_meno, priezvisko, prezivka, pohlavie, datum_narodenia, miesto_bydliska, klub_id, telefonne_cislo, old_id) " +
-          "VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%d', '%s', NULL)",
+          "(krstne_meno, priezvisko, prezyvka, pohlavie, datum_narodenia, miesto_bydliska, klub_id, telefonne_cislo, old_id, uzivatel_id) " +
+          "VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%d', '%s', NULL, NULL)",
           u.meno, u.priezvisko, u.meno + " " + u.priezvisko, u.gender, new SimpleDateFormat("yyyy-MM-dd").format(u.dat_narodenia), u.bydlisko, klub_id, u.telefon);
       }
       System.out.println(sql);
