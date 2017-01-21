@@ -36,7 +36,6 @@ INSTALLED_APPS = (
     'dal',
     'dal_select2',
     'grappelli',
-    'nested_admin',
     'django.contrib.admin',
     'django_tables2',
     'django.contrib.auth',
@@ -55,6 +54,7 @@ INSTALLED_APPS = (
     'hracTimu',
     'platby',
     'kategoriaPlatieb',
+    'nested_admin',
     
 )
 
@@ -124,7 +124,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, "static"),
+)
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
-STATICFILES_DIRS = [os.path.join(PROJECT_ROOT, 'css')]
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'css')
+
 

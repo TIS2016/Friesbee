@@ -23,6 +23,9 @@ from django.conf.urls import include, url
 
 admin.site.site_header = 'Frisbee Administracia'
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 from Frisbee.views import index
 from hrac.views import hrac, turnaj_hraca, hraci_klubu
 from klub.views import klub
@@ -62,3 +65,5 @@ urlpatterns = [
     
 
 ]
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

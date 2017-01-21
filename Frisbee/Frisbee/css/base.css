@@ -38,11 +38,10 @@ nav ul {
    
 }
 header{
-margin-top: -10px;
 margin-left:-10px;
 text-align: center;
 position: relative;
-line-height: 10px;
+line-height: 30px;
 }
 nav ul li{
  padding: 0 10px;

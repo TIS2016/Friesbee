@@ -34,6 +34,10 @@ table.paleblue td.umiestnenie {
     text-align: center;
 }
 
+table.paleblue td.spirit {
+    text-align: center;
+}
+
 table.paleblue thead th:first-child,
 table.paleblue thead td:first-child {
     border-left: none !important;

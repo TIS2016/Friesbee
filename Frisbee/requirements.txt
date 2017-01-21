@@ -5,3 +5,5 @@ django-suit==0.2.15
 django-super-inlines==0.1.4
 django-tables2==1.1.1
 django-autocomplete-light
+
+

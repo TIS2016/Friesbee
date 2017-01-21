@@ -27,7 +27,8 @@ class SimpleTable(tables.Table):
 def klub(request):
     nazov = "Kluby"
     queryset = Klub.objects.all()
+    klubs = Klub.objects.all()
     table = SimpleTable(queryset)
     RequestConfig(request).configure(table)
-    obsah = mark_safe("<h1>" + nazov + "</h1><section>" + smart_unicode('Zobrazenie všetkých Klubov') +" </section>")
-    return render(request,"table.html", {"table": table,"nazov":nazov,"obsah":obsah},)
+    obsah = mark_safe("<h1>" + nazov + "</h1><section>" + smart_unicode('Zobrazenie všetkých Klubov.') + " " + smart_unicode('Pre zobrazenie klikni na klub')+" </section>")
+    return render(request,"klub.html", {"table": table,"nazov":nazov,"obsah":obsah,"klubs":klubs})
