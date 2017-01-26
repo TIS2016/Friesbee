@@ -10,7 +10,7 @@ from hrac.models import Hrac
 from kategoriaPlatieb.models import KategoriaPlatieb
 
 
-class Platba(models.Model):
+class Clenstvo(models.Model):
     percenty = (
         (smart_unicode("10%"),smart_unicode("10%")),
         (smart_unicode("20%"),smart_unicode("20%")),
@@ -33,5 +33,5 @@ class Platba(models.Model):
 
 
     class Meta:
-        verbose_name_plural = 'Platby'
+        verbose_name_plural = 'Clenstvo'
         app_label = "frisbee"

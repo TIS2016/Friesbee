@@ -16,12 +16,11 @@ class BaseSimpleTable(tables.Table):
     kategoria = tables.Column(verbose_name= 'Kategória',orderable=True)
     datum_od = tables.Column(verbose_name= 'Dátum od',orderable=True)
     datum_do = tables.Column(verbose_name= 'Dátum do',orderable=True)
-    datum_zapisu = tables.Column(verbose_name= 'Dátum zápisu',orderable=True)
     #report = tables.Column(verbose_name= 'Report',orderable=True)
     
     class Meta:
         model = Turnaj
-        fields = ('kategoria','datum_od','datum_do','datum_zapisu',)
+        fields = ('kategoria','datum_od','datum_do')
         attrs = {"class": "paleblue"}
         orderable = True
         
@@ -44,7 +43,6 @@ class SimpleTableKlikolNaStat(BaseSimpleTable):
     kategoria = tables.Column(verbose_name= 'Kategória',orderable=True)
     datum_od = tables.Column(verbose_name= 'Dátum od',orderable=True)
     datum_do = tables.Column(verbose_name= 'Dátum do',orderable=True)
-    datum_zapisu = tables.Column(verbose_name= 'Dátum zápisu',orderable=True)
     #report = tables.Column(verbose_name= 'Report',orderable=True)
     nazov = tables.LinkColumn('zobraz_timi_turnaja', args=[tables.A('id')], orderable=True, empty_values=(), verbose_name= 'Názov')
     mesto = tables.LinkColumn('zobraz_turnaje_mesta',args=[tables.A('mesto')],verbose_name= 'Mesto',orderable=True)
@@ -52,7 +50,7 @@ class SimpleTableKlikolNaStat(BaseSimpleTable):
     
     class Meta:
         model = Turnaj
-        fields = ('nazov','kategoria','datum_od','datum_do','mesto','datum_zapisu',)
+        fields = ('nazov','kategoria','datum_od','datum_do','mesto',)
         attrs = {"class": "paleblue"}
         orderable = True
 
@@ -60,7 +58,6 @@ class SimpleTableKlikolNaMesto(BaseSimpleTable):
     kategoria = tables.Column(verbose_name= 'Kategória',orderable=True)
     datum_od = tables.Column(verbose_name= 'Dátum od',orderable=True)
     datum_do = tables.Column(verbose_name= 'Dátum do',orderable=True)
-    datum_zapisu = tables.Column(verbose_name= 'Dátum zápisu',orderable=True)
     #report = tables.Column(verbose_name= 'Report',orderable=True)
     nazov = tables.LinkColumn('zobraz_timi_turnaja', args=[tables.A('id')], orderable=True, empty_values=(), verbose_name= 'Názov')
     stat = tables.LinkColumn('zobraz_turnaje_statu',args=[tables.A('stat')],verbose_name= 'Štát',orderable=True)
@@ -68,7 +65,7 @@ class SimpleTableKlikolNaMesto(BaseSimpleTable):
     
     class Meta:
         model = Turnaj
-        fields = ('nazov','kategoria','datum_od','datum_do','stat','datum_zapisu',)
+        fields = ('nazov','kategoria','datum_od','datum_do','stat')
         attrs = {"class": "paleblue"}
         orderable = True
         
@@ -76,7 +73,6 @@ class SimpleTable(BaseSimpleTable):
     kategoria = tables.Column(verbose_name= 'Kategória',orderable=True)
     datum_od = tables.Column(verbose_name= 'Dátum od',orderable=True)
     datum_do = tables.Column(verbose_name= 'Dátum do',orderable=True)
-    datum_zapisu = tables.Column(verbose_name= 'Dátum zápisu',orderable=True)
     #report = tables.Column(verbose_name= 'Report',orderable=True)
     nazov = tables.LinkColumn('zobraz_timi_turnaja', args=[tables.A('id')], orderable=True, empty_values=(), verbose_name= 'Názov')
     stat = tables.LinkColumn('zobraz_turnaje_statu',args=[tables.A('stat')],verbose_name= 'Štát',orderable=True)
@@ -85,7 +81,7 @@ class SimpleTable(BaseSimpleTable):
     
     class Meta:
         model = Turnaj
-        fields = ('nazov','kategoria','datum_od','datum_do', 'stat','mesto','datum_zapisu',)
+        fields = ('nazov','kategoria','datum_od','datum_do', 'stat','mesto',)
         attrs = {"class": "paleblue"}
         orderable = True
 
@@ -93,7 +89,6 @@ class SimpleTable2(BaseSimpleTable):
     kategoria = tables.Column(verbose_name= 'Kategória',orderable=True)
     datum_od = tables.Column(verbose_name= 'Dátum od',orderable=True)
     datum_do = tables.Column(verbose_name= 'Dátum do',orderable=True)
-##    datum_zapisu = tables.Column(verbose_name= 'Dátum zápisu',orderable=True)
     #report = tables.Column(verbose_name= 'Report',orderable=True)
     nazov = tables.LinkColumn('zobraz_timi_turnaja', args=[tables.A('id')], orderable=True, empty_values=(), verbose_name= 'Názov')
     stat = tables.LinkColumn('zobraz_turnaje_statu',args=[tables.A('stat')],verbose_name= 'Štát',orderable=True)
@@ -230,9 +225,9 @@ def zobraz_zapasy_turnaja(request,id):
 
 def zobraz_timi_turnaja(request,id_turnaja):  
     nazov = smart_unicode("Tímy Turnaja")
-##    kategorieTurnajov = KategoriaTurnaju.objects.filter(turnaj=id_turnaja)
-##    queryset= Tim.objects.filter(id__in=kategorieTurnajov)
-    queryset = Tim.objects.all()
+    kat_id = KategoriaTurnaju.objects.filter(turnaj_id__in=id_turnaja)
+    timy = Tim.objects.filter(kategoria_turnaju_id__in=kat_id)
+    queryset = timy
     for turnaj in queryset:
         kategorieTurnajov = KategoriaTurnaju.objects.filter(turnaj=id_turnaja)
         turnaj.kategoria = kategorieTurnajov

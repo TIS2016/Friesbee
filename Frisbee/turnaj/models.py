@@ -5,7 +5,6 @@ from django.utils.encoding import smart_unicode
 
 class Turnaj(models.Model):
     nazov = models.CharField(max_length = 50)
-    
     day = date.today().weekday()
     datum_od = None
     datum_do = None
@@ -17,7 +16,6 @@ class Turnaj(models.Model):
         datum_do = models.DateField(default=(date.today()), null=True, blank=True)
     mesto = models.CharField(max_length = 50, default = '', null=True, blank=True)
     stat = models.CharField(max_length = 50, default = '', null=True, blank=True)
-    datum_zapisu = models.DateField(default=date.today, null=True, blank=True)
     report = models.CharField(max_length = 150, default = '', null=True, blank=True)
     
     class Meta:

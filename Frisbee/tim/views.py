@@ -19,6 +19,7 @@ class BaseSimpleTable(tables.Table):
     zapasy = tables.LinkColumn('zobraz_zapasy_timu',args=[tables.A('id')], orderable=False, empty_values=(), verbose_name= 'Zápasy')
     spirit = tables.Column(verbose_name= 'Spirit',orderable=True)
     
+    
     def render_zapasy(self,record):
         return mark_safe('<a href="'+reverse("zobraz_zapasy_timu", args=[record.id])+'">Zobraz</a>')
     
@@ -35,6 +36,7 @@ class SimpleTableKlikolTurnaj(BaseSimpleTable):
     nazov = tables.LinkColumn('zobraz_hracov_timu', args=[tables.A('id')], orderable=True, empty_values=(), verbose_name= 'Názov')
     klub = tables.Column(verbose_name= 'Klub',orderable=True)
     umiestnenie = tables.Column(verbose_name= 'Umiestnenie',orderable=True)
+    
 
     class Meta:
         model = Tim

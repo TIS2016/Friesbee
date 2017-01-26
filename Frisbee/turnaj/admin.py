@@ -37,7 +37,7 @@ class KategoriaTurnajuInlineAdmin(nested_admin.NestedStackedInline):
    
 
 class TurnajAdmin(nested_admin.NestedAdmin):
-    list_display = ['nazov','datum_od', 'datum_do', 'mesto', 'stat', 'datum_zapisu', 'report']
+    list_display = ['nazov','datum_od', 'datum_do', 'mesto', 'stat', 'report']
     list_filter = ['mesto', 'stat']
     search_fields = ['nazov']
     inlines = [KategoriaTurnajuInlineAdmin,]

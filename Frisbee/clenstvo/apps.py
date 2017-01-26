@@ -4,4 +4,4 @@ from django.apps import AppConfig
 
 
 class PlatbyConfig(AppConfig):
-    name = 'platby'
+    name = 'clenstvo'

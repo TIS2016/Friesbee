@@ -52,7 +52,7 @@ INSTALLED_APPS = (
     'klub',
     'hrac',
     'hracTimu',
-    'platby',
+    'clenstvo',
     'kategoriaPlatieb',
     'nested_admin',
     
