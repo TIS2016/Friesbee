@@ -6,9 +6,9 @@ from models import Clenstvo
 # Register your models here.
 
 class ClenstvoAdminSelf(nested_admin.NestedAdmin):
-    list_display = ['hrac_id','kategoria_platby','datum_platby','celkova_suma', 'percent']
-    list_filter = ['hrac','kategoria_platby',]
-    search_fields = ['datum_platby','percent','hrac']
+    list_display = ['hrac_id','klub_saf_id','datum_platby','zaplateny_za_rok','suma']
+    list_filter = ['hrac','zaplateny_za_rok','klub_saf_id']
+    search_fields = ['datum_platby','hrac']
 
 admin.site.register(Clenstvo, ClenstvoAdminSelf)
 

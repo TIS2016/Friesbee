@@ -52,8 +52,9 @@ INSTALLED_APPS = (
     'klub',
     'hrac',
     'hracTimu',
+    'typClenstva',
     'clenstvo',
-    'kategoriaPlatieb',
+    'klubSaf',
     'nested_admin',
     
 )

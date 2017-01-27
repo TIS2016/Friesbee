@@ -3,5 +3,5 @@ from __future__ import unicode_literals
 from django.apps import AppConfig
 
 
-class PlatbyConfig(AppConfig):
-    name = 'clenstvo'
+class KategoriaplatiebConfig(AppConfig):
+    name = 'typClenstva'
