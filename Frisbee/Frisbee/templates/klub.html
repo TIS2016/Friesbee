@@ -1,0 +1,40 @@
+{% extends "index.html" %}
+{% block title %} {{ nazov }} {% endblock %}
+{% block content %}
+{% load static %}
+{{ obsah }}
+{{ button }}
+{% for klub in klubs %}
+	<label class="checkbox" data-toggle="collapse" data-target="#{{ forloop.counter0 }}" style="width: 20%; margin:20px auto; border-bottom: 2px solid #528FD1;">{{ klub }}</label>
+	<div id="{{ forloop.counter0 }}" class="collapse in">
+		<table class="table table-hover table-sm table=responsive">
+		<thead class="thead-inverse">
+		    <tr>
+		      <th>#</th>
+		      <th style="text-align: center;">Názov klubu</th>
+		      <th style="text-align: center;">Počet hráčov</th>
+		      <th style="text-align: center;">Počet výhier</th>
+		      <th style="text-align: center;">Počet prehier</th>
+		      <th style="text-align: center;">Spirit</th>
+		    </tr>
+		</thead>
+		<tbody>
+		   <tr>
+		     <th scope="row">1</th>
+		     <td>{{ klub.nazov }}</td>
+		     <td>{{ klub.pocet_hracov }}</td>
+		     <td>{{ klub.pocet_vyhier }}</td>
+		     <td>{{ klub.pocet_prehier }}</td>
+		     <td>{{ klub.spirit }}</td>
+		    </tr>
+		  </tbody>
+		</table>    
+	</div>
+{% endfor %}
+<script src="{% static 'jquery-1.9.1.min.js' %}"></script>
+<script src="{% static 'bootstrap.min.js' %}"></script>
+<script type="text/javascript">
+	$('.collapse').collapse();
+</script>
+
+{% endblock %}

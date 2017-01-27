@@ -1,0 +1,26 @@
+[
+{
+    "model": "frisbee.TypClenstva",
+    "pk": 1,
+    "fields": {
+      "nazov": "Cestné clenské",
+      "suma": "0"
+    }
+  },
+  {
+    "model": "frisbee.TypClenstva",
+    "pk": 2,
+    "fields": {
+      "nazov": "Zlavnené clenské",
+      "suma": "8"
+    }
+  },
+  {
+    "model": "frisbee.TypClenstva",
+    "pk": 3,
+    "fields": {
+      "nazov": "Plné clenské",
+      "suma": "13"
+    }
+  }
+]
