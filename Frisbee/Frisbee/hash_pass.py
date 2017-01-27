@@ -1,4 +1,3 @@
-print('zavolali ma')
 import django
 try:
         from django.contrib.auth.models import User

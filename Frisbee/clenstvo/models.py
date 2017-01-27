@@ -11,6 +11,7 @@ from django.template.defaultfilters import default
 from datetime import date
 from hrac.models import Hrac
 from klubSaf.models import KlubSaf
+from typClenstva.models import TypClenstva
 
 
 
@@ -19,11 +20,16 @@ def roky(datum):
 
 class Clenstvo(models.Model):
     rok = roky(date.today())
+    typy = TypClenstva.objects.all()
+    pole = []
+    for i in typy:
+        pole.append(i.nazov)
     datum_platby = models.DateField(default=date.today, null=True, blank=True)
-    suma = models.DecimalField(decimal_places=3,max_digits=5, null=True, blank=True)
+    suma = models.DecimalField(decimal_places=3,max_digits=5,default = '13', null=True, blank=True)
     zaplateny_za_rok = models.IntegerField(default=rok[0], choices = [(i,smart_unicode(i)) for i in rok], null=False, blank=True)
     hrac = models.OneToOneField(Hrac, null=True, blank=True)
     klub_saf_id = models.ForeignKey(KlubSaf, null=True, blank=True)
+    typ_clenstva = models.CharField(max_length=30,choices = [(i,smart_unicode(i)) for i in pole],null=True, blank=True)
 
 
 
